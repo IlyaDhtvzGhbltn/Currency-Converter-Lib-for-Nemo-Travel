@@ -9,24 +9,45 @@ namespace CurrencyConverter.Implementation
 {
     public class SimpleConverter : ICurrencyConverter
     {
-        public decimal ConvertBaseCurrency(decimal baseCurrencyValue, CurrencyPair pair)
+        public decimal BaseToQuoted(decimal baseCurrencyValue, CurrencyPair pair)
         {
-            return pair.Course * baseCurrencyValue;
+            return convertBaseToQuoted(baseCurrencyValue, pair.Course);
         }
 
-        public IDictionary<string, decimal> ConvertBaseToQuoted(decimal baseCurrencyValue, params CurrencyPair[] pair)
+        public decimal QuotedToBase(decimal quotedCurrencyValue, CurrencyPair pair)
         {
-            throw new NotImplementedException();
+            return convertQuotedToBase(quotedCurrencyValue, pair.Course);
         }
 
-        public decimal ConvertQuotedCurrency(decimal quotedCurrencyValue, CurrencyPair pair)
+        public Dictionary<string, decimal> BaseToQuotedCollection(decimal baseCurrencyValue, params CurrencyPair[] pair)
         {
-            throw new NotImplementedException();
+            var dict = new Dictionary<string, decimal>();
+            foreach (CurrencyPair p in pair)
+            {
+                dict[p.Name] = BaseToQuoted(baseCurrencyValue, p);
+            }
+            return dict;
         }
 
-        public IDictionary<string, decimal> ConvertQuotedToBase(decimal quotedCurrencyValue, params CurrencyPair[] pair)
+        public Dictionary<string, decimal> QuotedToBaseCollection(decimal quotedCurrencyValue, params CurrencyPair[] pair)
         {
-            throw new NotImplementedException();
+            var dict = new Dictionary<string, decimal>();
+            foreach (CurrencyPair p in pair)
+            {
+                dict[p.Name] = QuotedToBase(quotedCurrencyValue, p);
+            }
+            return dict;
+        }
+
+
+        private decimal convertBaseToQuoted(decimal baseCurrencyValue, decimal course)
+        {
+            return course * baseCurrencyValue;
+        }
+
+        private decimal convertQuotedToBase(decimal quotedCurrencyValue, decimal course) 
+        {
+            return quotedCurrencyValue / course;
         }
     }
 }

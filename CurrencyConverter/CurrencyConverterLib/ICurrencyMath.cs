@@ -8,5 +8,6 @@ namespace CurrencyConverter
 {
     public interface ICurrencyMath
     {
+        public decimal 
     }
 }

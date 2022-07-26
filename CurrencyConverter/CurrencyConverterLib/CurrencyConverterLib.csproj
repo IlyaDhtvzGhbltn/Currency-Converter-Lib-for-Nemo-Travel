@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICalculator.cs" />
-    <Compile Include="IConverter.cs" />
+    <Compile Include="CurrencyHandler.cs" />
+    <Compile Include="DTO\CurrencyPair.cs" />
+    <Compile Include="ICurrencyConverter.cs" />
+    <Compile Include="ICurrencyMath.cs" />
+    <Compile Include="Implementation\AccuracySensitiveConverter.cs" />
+    <Compile Include="Implementation\SimpleConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CurrencyConverterLib\CurrencyConverterLib.csproj">
+      <Project>{86253f89-c150-4766-b6cb-13feb263d219}</Project>
+      <Name>CurrencyConverterLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
