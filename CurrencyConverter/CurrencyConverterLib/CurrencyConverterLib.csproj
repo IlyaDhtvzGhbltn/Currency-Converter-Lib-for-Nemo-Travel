@@ -41,12 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrencyHandler.cs" />
     <Compile Include="DTO\Currency.cs" />
     <Compile Include="DTO\CurrencyPair.cs" />
     <Compile Include="ICurrencyConverter.cs" />
     <Compile Include="ICurrencyMath.cs" />
-    <Compile Include="ICurrencyValidator.cs" />
+    <Compile Include="ICurrencyCaster.cs" />
     <Compile Include="Implementation\Converter\AccuracySensitiveConverter.cs" />
     <Compile Include="Implementation\Converter\AnotherConverter.cs" />
     <Compile Include="Implementation\Converter\SimpleConverter.cs" />
