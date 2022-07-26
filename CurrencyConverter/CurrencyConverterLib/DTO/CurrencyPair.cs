@@ -13,7 +13,7 @@ namespace CurrencyConverter.DTO
     /// </summary>
     public class CurrencyPair
     {
-        public string Name { get; }
+        public string PairName { get; }
         /// <summary>
         /// Notation GBP/USD means that the base currency is GBP
         /// </summary>
@@ -36,7 +36,7 @@ namespace CurrencyConverter.DTO
                 throw new Exception("Cours couldn't be zero or less");
             }
 
-            this.Name = name;
+            this.PairName = name;
             this.Course = course;
         }
 

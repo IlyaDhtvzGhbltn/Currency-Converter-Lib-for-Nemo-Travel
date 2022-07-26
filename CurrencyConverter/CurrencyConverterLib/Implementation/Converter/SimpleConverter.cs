@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyConverter.Implementation
+namespace CurrencyConverter.Implementation.Converter
 {
     public class SimpleConverter : ICurrencyConverter
     {
@@ -24,7 +24,7 @@ namespace CurrencyConverter.Implementation
             var dict = new Dictionary<string, decimal>();
             foreach (CurrencyPair p in pair)
             {
-                dict[p.Name] = BaseToQuoted(baseCurrencyValue, p);
+                dict[p.PairName] = BaseToQuoted(baseCurrencyValue, p);
             }
             return dict;
         }
@@ -34,7 +34,7 @@ namespace CurrencyConverter.Implementation
             var dict = new Dictionary<string, decimal>();
             foreach (CurrencyPair p in pair)
             {
-                dict[p.Name] = QuotedToBase(quotedCurrencyValue, p);
+                dict[p.PairName] = QuotedToBase(quotedCurrencyValue, p);
             }
             return dict;
         }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CurrencyConverter.Implementation
+namespace CurrencyConverter.Implementation.Converter
 {
     public class AccuracySensitiveConverter : ICurrencyConverter
     {
