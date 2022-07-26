@@ -49,5 +49,12 @@ namespace CurrencyConverter.Implementation.Math
             return minuendInBase - subtrahendInBase;
         }
 
+        public decimal SubtractionToQuoted(Currency minuend, Currency subtrahend, CurrencyPair pair)
+        {
+            decimal minuendInBase = CurrencyCaster.CastToQuoted(minuend, pair);
+            decimal subtrahendInBase = CurrencyCaster.CastToQuoted(subtrahend, pair);
+
+            return minuendInBase - subtrahendInBase;
+        }
     }
 }

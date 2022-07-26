@@ -29,7 +29,7 @@ namespace TestClient
 
             ICurrencyCaster validator = new CurrencyCaster(conv);
             ICurrencyMath math = new SimpleCurrencyMath(conv, validator);
-            var gbp = new Currency("GBP", 10);
+            var gbp = new Currency("GBP", 1);
             var usd = new Currency("USD", 1);
 
             decimal result5 = math.AddToBase(GBPUSD, gbp, usd, gbp, gbp, usd);
@@ -39,7 +39,7 @@ namespace TestClient
             decimal result9 = math.AddToQuoted(GBPUSD, usd, usd);
             decimal result10 = math.AddToQuoted(GBPUSD, gbp, gbp);
 
-
+            decimal result11 = math.SubtractionToBase(usd, gbp, GBPUSD);
 
             Console.ReadKey();
         }
